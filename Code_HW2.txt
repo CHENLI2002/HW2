@@ -1,0 +1,2 @@
+I just basically using Python request. Where I just "requests.post" or "requests.get" to get my results.
+All code is present in test.py

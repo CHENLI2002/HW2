@@ -1,0 +1,6 @@
+Registe latency US: 0.14636671543121338, List latency US: 0.12537093162536622,        
+Registe latency Europe: 0.4764512538909912, List latency Europe: 0.447053861618042
+time not found: 0
+Consistency shows no significant result. Basically it is consistent.
+The latency is expected. Europe is having higher latency because of physical distance.
+There's no significant latency difference between list and register
