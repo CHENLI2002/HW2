@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.get("/greeting", (req, res) => {
     res.setHeader("Content-Type", "text/html");
-    res.send(`<!DOCTYPE html><html><body><h1>Hello, World!</h1></body></html>`);
+    res.send(`hello world`);
 });
 
 app.post("/register", async (req, res) => {
@@ -31,7 +31,7 @@ app.get("/list", async (req, res) => {
 });
 
 
-app.post("/clear", async (req, res) => {
+async function clearUsers(res) {
     const query = datastore.createQuery("User");
     const [users] = await datastore.runQuery(query);
     const keys = users.map((user) => user[Datastore.KEY]);
@@ -39,7 +39,9 @@ app.post("/clear", async (req, res) => {
       await datastore.delete(keys);
     }
     res.status(200).json({ message: "Cleared" });
-});
+}
+
+app.post("/clear", (req, res) => clearUsers(res));
   
 
 const server = app.listen(port, '0.0.0.0', () => {
